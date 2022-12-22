@@ -1,27 +1,43 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Lottie from 'react-lottie';
-import animationData from './assets/lotties/confetti.json';
+import confetti from './assets/lotties/confetti.json';
 
 
 const Home = () => {
+
+  const [animateStatus, setAnimateStatus] = useState(true)
+
   const defaultOptions = {
     loop: true,
-    autoplay: false,
-    animationData: animationData,
+    autoplay: true,
+    animationData: confetti,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
   }
 
+  useEffect(() => {
+    console.log(animateStatus);
+  }, [animateStatus]); 
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimateStatus(false)
+    }, 1000);
+  })
+
   return (
     <>
-    <div className="teste">
-      <Lottie 
-	      options={defaultOptions}
-        height={'100%'}
-        width={'34%'}
+    {
+      true ? 
+        <Lottie 
+        options={defaultOptions}
+        height='100%'
+        width='82.3%'
+        isPaused={animateStatus}
       />
-      </div>
+     : null
+    }
     </>
   )
 }

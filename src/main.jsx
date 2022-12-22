@@ -7,7 +7,7 @@ import GlobalStyle from './styles/GlobalStyles'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <GlobalStyle />
-      <BrowserRouter>
+    <BrowserRouter>
         <Rotas />
     </BrowserRouter>
   </>
