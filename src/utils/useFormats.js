@@ -1,4 +1,6 @@
-export const useFormats = () => {
+import { use } from "chai"
+
+const useFormats = () => {
 
   const removeAcentos = (string) => {
 
@@ -16,7 +18,7 @@ export const useFormats = () => {
     return stringSeparada.join('')
   }
 
-  const PrimeiraLetraMaiuscula = (palavra) => {
+  const primeiraLetraMaiuscula = (palavra) => {
       if (palavra[0] !== undefined) {
         return palavra[0].toUpperCase() + palavra.substr(1);
       } else {
@@ -28,14 +30,16 @@ export const useFormats = () => {
     const palavras = frase.split(' ')
     const fraseMaiuscula = []
     for(let i = 0; i < palavras.length; i++) {
-      fraseMaiuscula.push(PrimeiraLetraMaiuscula(palavras[i]))
+      fraseMaiuscula.push(primeiraLetraMaiuscula(palavras[i]))
     }
     return fraseMaiuscula.join(' ')
   }
 
     return {
       removeAcentos,
-      PrimeiraLetraMaiuscula,
+      primeiraLetraMaiuscula,
       fraseLetraMaiuscula
     }
 }
+
+export default useFormats
