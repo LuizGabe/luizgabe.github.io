@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import Rotas from './Rotas'
-import GlobalStyle from './styles/GlobalStyles'
+import GlobalStyle from './assets/styles/GlobalStyles'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
