@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react"
 import Lottie2 from 'react-lottie';
-import confetti from './assets/lotties/confetti.json';
-import { useFormats } from "./utils/useFormats";
+import confetti from '../../assets/lotties/confetti.json';
+import { useFormats } from "../../utils/useFormats";
 
-const Home = () => {
+const Game = () => {
 
   const [animateStatus, setAnimateStatus] = useState(true)
   const [input, setInput] = useState('')
-  const { removeAcentos, PrimeiraLetraMaiuscula, fraseLetraMaiuscula } = useFormats()
+  const { removeAcentos, primeiraLetraMaiuscula, fraseLetraMaiuscula } = useFormats()
 
   const defaultOptions = {
     loop: false,
@@ -44,4 +44,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Game
