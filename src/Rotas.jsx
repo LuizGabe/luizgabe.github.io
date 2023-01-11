@@ -1,5 +1,8 @@
 import React from "react";
-import Home from "./Home";
+import Home from "./pages/Home"
+
+import Game from "./pages/Game";
+
 import { Routes, Route, Link } from 'react-router-dom'
 
 const Rotas = () => {
@@ -7,11 +10,15 @@ const Rotas = () => {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="*" element={
+
+      <Route path='/game' element={<Game />} />
+
+
+      <Route path='*' element={
         <>
           <h1>Pagina 404</h1>
           <Link to='/'>
-            Retornar para a Home
+            Retornar para a Game
           </Link>
         </>
       }/>
